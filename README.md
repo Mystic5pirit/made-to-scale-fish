@@ -1,5 +1,5 @@
 # made-to-scale-fish
- A game made for GMTK 2024 Game Jam
+ A game made for GMTK 2024 Game Jam with the prompt "Built to Scale."
 
  All Rights Reserved Except for Audio. Audio Attributed Below.
 
