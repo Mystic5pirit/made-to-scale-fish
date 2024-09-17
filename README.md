@@ -14,6 +14,6 @@
 
 
 Audio used under CC0 from:
-https://pixabay.com/music/beats-september-219737/
+https://pixabay.com/music/beats-september-219737/ and
 https://opengameart.org/content/40-cc0-water-splash-slime-sfx
  
