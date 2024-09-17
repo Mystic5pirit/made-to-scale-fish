@@ -1,0 +1,189 @@
+[gd_scene load_steps=10 format=3 uid="uid://c3h2hwnkoc6o3"]
+
+[ext_resource type="Script" path="res://ui.gd" id="1_wrs7r"]
+[ext_resource type="Shader" path="res://outline.gdshader" id="2_licnf"]
+[ext_resource type="Texture2D" uid="uid://cr8iog8j4qwhx" path="res://Scale.png" id="2_yotth"]
+[ext_resource type="Texture2D" uid="uid://csw6wbx606qtb" path="res://Money.png" id="4_qs5on"]
+[ext_resource type="Texture2D" uid="uid://c2im7m83nqdg" path="res://Gem.png" id="5_0cosc"]
+[ext_resource type="Texture2D" uid="uid://c2tpmi7svqpgg" path="res://Fish.png" id="6_h4daw"]
+[ext_resource type="AudioStream" uid="uid://c773foh3rc6ep" path="res://slime_10.ogg" id="7_wrifc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iosp3"]
+shader = ExtResource("2_licnf")
+shader_parameter/outline_color = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l5dbu"]
+shader = ExtResource("2_licnf")
+shader_parameter/outline_color = null
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wrs7r")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 265.0
+offset_bottom = 659.0
+color = Color(0.372549, 0.803922, 0.894118, 1)
+
+[node name="Scale" type="TextureRect" parent="ColorRect"]
+material = SubResource("ShaderMaterial_iosp3")
+layout_mode = 0
+offset_left = 70.0
+offset_top = 24.0
+offset_right = 137.0
+offset_bottom = 72.0
+rotation = 1.5708
+texture = ExtResource("2_yotth")
+expand_mode = 1
+
+[node name="ScaleCountDisplay" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 23.0
+offset_right = 253.0
+offset_bottom = 103.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "0"
+
+[node name="Money" type="TextureRect" parent="ColorRect"]
+material = SubResource("ShaderMaterial_iosp3")
+offset_left = 65.0
+offset_top = 169.0
+offset_right = 104.0
+offset_bottom = 235.0
+rotation = 3.14159
+texture = ExtResource("4_qs5on")
+expand_mode = 1
+
+[node name="MoneyCountDisplay" type="RichTextLabel" parent="ColorRect"]
+offset_left = 73.0
+offset_top = 102.0
+offset_right = 253.0
+offset_bottom = 182.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "0"
+
+[node name="Gem" type="TextureRect" parent="ColorRect"]
+visible = false
+material = SubResource("ShaderMaterial_iosp3")
+offset_left = 17.0
+offset_top = 202.0
+offset_right = 69.0
+offset_bottom = 250.0
+rotation = 6.28319
+texture = ExtResource("5_0cosc")
+expand_mode = 1
+
+[node name="GemCountDisplay" type="RichTextLabel" parent="ColorRect"]
+visible = false
+offset_left = 68.0
+offset_top = 190.0
+offset_right = 270.0
+offset_bottom = 270.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "∞(Jam)"
+
+[node name="StatsButton" type="TextureButton" parent="."]
+material = SubResource("ShaderMaterial_l5dbu")
+layout_mode = 0
+offset_left = 11.0
+offset_top = 270.0
+offset_right = 254.0
+offset_bottom = 356.0
+texture_normal = ExtResource("6_h4daw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="StatsText" type="RichTextLabel" parent="StatsButton"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 206.0
+offset_bottom = 61.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 29
+bbcode_enabled = true
+text = "[center]STATS"
+
+[node name="ScalesButton" type="TextureButton" parent="."]
+material = SubResource("ShaderMaterial_l5dbu")
+offset_left = 11.0
+offset_top = 365.0
+offset_right = 254.0
+offset_bottom = 451.0
+texture_normal = ExtResource("6_h4daw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ScalesText" type="RichTextLabel" parent="ScalesButton"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 206.0
+offset_bottom = 61.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 29
+bbcode_enabled = true
+text = "[center]SCALES"
+
+[node name="AutoScaleButton" type="TextureButton" parent="."]
+material = SubResource("ShaderMaterial_l5dbu")
+offset_left = 11.0
+offset_top = 457.0
+offset_right = 254.0
+offset_bottom = 543.0
+texture_normal = ExtResource("6_h4daw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AutoScaleText" type="RichTextLabel" parent="AutoScaleButton"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 27.0
+offset_right = 206.0
+offset_bottom = 67.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 19
+bbcode_enabled = true
+text = "[center]AUTOSCALER"
+
+[node name="SettingsButton" type="TextureButton" parent="."]
+material = SubResource("ShaderMaterial_l5dbu")
+offset_left = 11.0
+offset_top = 552.0
+offset_right = 254.0
+offset_bottom = 638.0
+texture_normal = ExtResource("6_h4daw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SettingsText" type="RichTextLabel" parent="SettingsButton"]
+z_index = 5
+layout_mode = 0
+offset_left = 58.0
+offset_top = 24.0
+offset_right = 228.0
+offset_bottom = 64.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center]SETTINGS"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_wrifc")
+
+[connection signal="button_up" from="StatsButton" to="." method="_on_stats_button_button_up"]
+[connection signal="button_up" from="ScalesButton" to="." method="_on_scales_button_button_up"]
+[connection signal="button_up" from="AutoScaleButton" to="." method="_on_auto_scale_button_button_up"]
+[connection signal="button_up" from="SettingsButton" to="." method="_on_settings_button_button_up"]

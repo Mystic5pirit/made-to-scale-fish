@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://d27dqq11glni2"]
+
+[ext_resource type="Script" path="res://scale.gd" id="1_e411e"]
+[ext_resource type="Texture2D" uid="uid://cr8iog8j4qwhx" path="res://Scale.png" id="2_4kcgh"]
+[ext_resource type="Shader" path="res://outline.gdshader" id="3_2dwjc"]
+[ext_resource type="AudioStream" uid="uid://bs1dkk7w25guh" path="res://splash_06.ogg" id="4_b0i8u"]
+[ext_resource type="AudioStream" uid="uid://2jytsakb3gwc" path="res://slime_02.ogg" id="5_3tlnj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mga85"]
+shader = ExtResource("3_2dwjc")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0oujb"]
+radius = 25.0
+height = 66.6667
+
+[sub_resource type="Animation" id="Animation_5rryo"]
+resource_name = "Wiggle"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0872665, 5.20149e-09, -0.0872665, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ses3p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qnv70"]
+_data = {
+"RESET": SubResource("Animation_ses3p"),
+"Wiggle": SubResource("Animation_5rryo")
+}
+
+[node name="Scale" type="Node2D"]
+script = ExtResource("1_e411e")
+
+[node name="ScaleScaler" type="Node2D" parent="."]
+scale = Vector2(0.6, 0.6)
+
+[node name="Scale" type="Sprite2D" parent="ScaleScaler"]
+material = SubResource("ShaderMaterial_mga85")
+position = Vector2(-33, 0)
+texture = ExtResource("2_4kcgh")
+
+[node name="Area2D" type="Area2D" parent="ScaleScaler"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScaleScaler/Area2D"]
+position = Vector2(-33.3333, 1.42109e-13)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_0oujb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qnv70")
+}
+
+[node name="IncompleteRemovalAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_b0i8u")
+
+[node name="CompleteRemovalAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_3tlnj")
+
+[connection signal="input_event" from="ScaleScaler/Area2D" to="." method="_on_area_2d_input_event"]

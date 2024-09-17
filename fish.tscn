@@ -1,0 +1,198 @@
+[gd_scene load_steps=3 format=3 uid="uid://cochp0qk3ugbq"]
+
+[ext_resource type="Script" path="res://fish.gd" id="1_ctwgf"]
+[ext_resource type="Texture2D" uid="uid://c2tpmi7svqpgg" path="res://Fish.png" id="2_y55rs"]
+
+[node name="Fish" type="Node2D"]
+script = ExtResource("1_ctwgf")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-47, 0)
+scale = Vector2(3, 3.3)
+texture = ExtResource("2_y55rs")
+
+[node name="Column0" type="Node2D" parent="."]
+position = Vector2(-80, 0)
+
+[node name="Node2D" type="Node2D" parent="Column0"]
+position = Vector2(0, -60)
+
+[node name="Node2D2" type="Node2D" parent="Column0"]
+position = Vector2(0, -30)
+
+[node name="Node2D3" type="Node2D" parent="Column0"]
+
+[node name="Node2D4" type="Node2D" parent="Column0"]
+position = Vector2(0, 30)
+
+[node name="Node2D5" type="Node2D" parent="Column0"]
+position = Vector2(0, 60)
+
+[node name="Column1" type="Node2D" parent="."]
+position = Vector2(-60, 0)
+
+[node name="Node2D" type="Node2D" parent="Column1"]
+position = Vector2(0, -75)
+
+[node name="Node2D2" type="Node2D" parent="Column1"]
+position = Vector2(0, -45)
+
+[node name="Node2D3" type="Node2D" parent="Column1"]
+position = Vector2(0, -15)
+
+[node name="Node2D4" type="Node2D" parent="Column1"]
+position = Vector2(0, 15)
+
+[node name="Node2D5" type="Node2D" parent="Column1"]
+position = Vector2(0, 45)
+
+[node name="Node2D6" type="Node2D" parent="Column1"]
+position = Vector2(0, 75)
+
+[node name="Column2" type="Node2D" parent="."]
+position = Vector2(-40, 0)
+
+[node name="Node2D" type="Node2D" parent="Column2"]
+position = Vector2(0, -90)
+
+[node name="Node2D2" type="Node2D" parent="Column2"]
+position = Vector2(0, -60)
+
+[node name="Node2D3" type="Node2D" parent="Column2"]
+position = Vector2(0, -30)
+
+[node name="Node2D4" type="Node2D" parent="Column2"]
+
+[node name="Node2D5" type="Node2D" parent="Column2"]
+position = Vector2(0, 30)
+
+[node name="Node2D6" type="Node2D" parent="Column2"]
+position = Vector2(0, 60)
+
+[node name="Node2D7" type="Node2D" parent="Column2"]
+position = Vector2(0, 90)
+
+[node name="Column3" type="Node2D" parent="."]
+position = Vector2(-20, 0)
+
+[node name="Node2D" type="Node2D" parent="Column3"]
+position = Vector2(0, -75)
+
+[node name="Node2D2" type="Node2D" parent="Column3"]
+position = Vector2(0, -45)
+
+[node name="Node2D3" type="Node2D" parent="Column3"]
+position = Vector2(0, -15)
+
+[node name="Node2D4" type="Node2D" parent="Column3"]
+position = Vector2(0, 15)
+
+[node name="Node2D5" type="Node2D" parent="Column3"]
+position = Vector2(0, 45)
+
+[node name="Node2D6" type="Node2D" parent="Column3"]
+position = Vector2(0, 75)
+
+[node name="Column4" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="Column4"]
+position = Vector2(0, -90)
+
+[node name="Node2D2" type="Node2D" parent="Column4"]
+position = Vector2(0, -60)
+
+[node name="Node2D3" type="Node2D" parent="Column4"]
+position = Vector2(0, -30)
+
+[node name="Node2D4" type="Node2D" parent="Column4"]
+
+[node name="Node2D5" type="Node2D" parent="Column4"]
+position = Vector2(0, 30)
+
+[node name="Node2D6" type="Node2D" parent="Column4"]
+position = Vector2(0, 60)
+
+[node name="Node2D7" type="Node2D" parent="Column4"]
+position = Vector2(0, 90)
+
+[node name="Column5" type="Node2D" parent="."]
+position = Vector2(20, 0)
+
+[node name="Node2D" type="Node2D" parent="Column5"]
+position = Vector2(0, -75)
+
+[node name="Node2D2" type="Node2D" parent="Column5"]
+position = Vector2(0, -45)
+
+[node name="Node2D3" type="Node2D" parent="Column5"]
+position = Vector2(0, -15)
+
+[node name="Node2D4" type="Node2D" parent="Column5"]
+position = Vector2(0, 15)
+
+[node name="Node2D5" type="Node2D" parent="Column5"]
+position = Vector2(0, 45)
+
+[node name="Node2D6" type="Node2D" parent="Column5"]
+position = Vector2(0, 75)
+
+[node name="Column6" type="Node2D" parent="."]
+position = Vector2(40, 0)
+
+[node name="Node2D" type="Node2D" parent="Column6"]
+position = Vector2(0, -90)
+
+[node name="Node2D2" type="Node2D" parent="Column6"]
+position = Vector2(0, -60)
+
+[node name="Node2D3" type="Node2D" parent="Column6"]
+position = Vector2(0, -30)
+
+[node name="Node2D4" type="Node2D" parent="Column6"]
+
+[node name="Node2D5" type="Node2D" parent="Column6"]
+position = Vector2(0, 30)
+
+[node name="Node2D6" type="Node2D" parent="Column6"]
+position = Vector2(0, 60)
+
+[node name="Node2D7" type="Node2D" parent="Column6"]
+position = Vector2(0, 90)
+
+[node name="Column7" type="Node2D" parent="."]
+position = Vector2(60, 0)
+
+[node name="Node2D" type="Node2D" parent="Column7"]
+position = Vector2(0, -75)
+
+[node name="Node2D2" type="Node2D" parent="Column7"]
+position = Vector2(0, -45)
+
+[node name="Node2D3" type="Node2D" parent="Column7"]
+position = Vector2(0, -15)
+
+[node name="Node2D4" type="Node2D" parent="Column7"]
+position = Vector2(0, 15)
+
+[node name="Node2D5" type="Node2D" parent="Column7"]
+position = Vector2(0, 45)
+
+[node name="Node2D6" type="Node2D" parent="Column7"]
+position = Vector2(0, 75)
+
+[node name="Column8" type="Node2D" parent="."]
+position = Vector2(80, 0)
+
+[node name="Node2D" type="Node2D" parent="Column8"]
+position = Vector2(0, -60)
+
+[node name="Node2D2" type="Node2D" parent="Column8"]
+position = Vector2(0, -30)
+
+[node name="Node2D3" type="Node2D" parent="Column8"]
+
+[node name="Node2D4" type="Node2D" parent="Column8"]
+position = Vector2(0, 30)
+
+[node name="Node2D5" type="Node2D" parent="Column8"]
+position = Vector2(0, 60)

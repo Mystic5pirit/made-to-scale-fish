@@ -1,0 +1,550 @@
+[gd_scene load_steps=19 format=3 uid="uid://dildx5271me7n"]
+
+[ext_resource type="Shader" path="res://outline.gdshader" id="1_t71ir"]
+[ext_resource type="Script" path="res://upgrades.gd" id="1_ts2m7"]
+[ext_resource type="Texture2D" uid="uid://cr8iog8j4qwhx" path="res://Scale.png" id="2_8t374"]
+[ext_resource type="Texture2D" uid="uid://4k6ayjitthmb" path="res://scale_grey.png" id="4_73o61"]
+[ext_resource type="Texture2D" uid="uid://hkxk6avwt4yc" path="res://Strength.png" id="4_j0omc"]
+[ext_resource type="Texture2D" uid="uid://csw6wbx606qtb" path="res://Money.png" id="5_osj2u"]
+[ext_resource type="Texture2D" uid="uid://c2tpmi7svqpgg" path="res://Fish.png" id="6_7l5bm"]
+[ext_resource type="Texture2D" uid="uid://da7ir6yey6fno" path="res://FishOutline.png" id="7_a64yj"]
+[ext_resource type="Texture2D" uid="uid://c2im7m83nqdg" path="res://Gem.png" id="8_lti00"]
+[ext_resource type="Texture2D" uid="uid://b4p8edfhe5gyb" path="res://Clock.png" id="8_wiufn"]
+[ext_resource type="Texture2D" uid="uid://jjdqjmdmetgg" path="res://Arrow.png" id="11_xftrp"]
+[ext_resource type="AudioStream" uid="uid://bb3geas050ik0" path="res://slime_12.ogg" id="12_nd1d7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oe8mb"]
+shader = ExtResource("1_t71ir")
+shader_parameter/outline_color = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j05xt"]
+shader = ExtResource("1_t71ir")
+shader_parameter/outline_color = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1p5dp"]
+shader = ExtResource("1_t71ir")
+shader_parameter/outline_color = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqd5v"]
+shader = ExtResource("1_t71ir")
+shader_parameter/outline_color = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lnha2"]
+shader = ExtResource("1_t71ir")
+shader_parameter/outline_color = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_la2bw"]
+shader = ExtResource("1_t71ir")
+shader_parameter/outline_color = null
+
+[node name="Upgrades" type="Control" groups=["Upgrades"]]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ts2m7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 1167.0
+offset_bottom = 669.0
+color = Color(0, 0, 0, 0.501961)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+material = SubResource("ShaderMaterial_oe8mb")
+layout_mode = 0
+offset_left = 147.0
+offset_top = 49.0
+offset_right = 1003.0
+offset_bottom = 593.0
+texture = ExtResource("2_8t374")
+
+[node name="Weight" type="TextureRect" parent="ColorRect/TextureRect"]
+material = SubResource("ShaderMaterial_j05xt")
+offset_left = 135.0
+offset_top = 98.0
+offset_right = 198.0
+offset_bottom = 152.0
+rotation = 6.28319
+texture = ExtResource("4_j0omc")
+expand_mode = 1
+
+[node name="Text" type="RichTextLabel" parent="ColorRect/TextureRect/Weight"]
+offset_left = 91.0
+offset_top = -11.0
+offset_right = 246.0
+offset_bottom = 69.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "10000"
+
+[node name="WeightScaleButton" type="TextureButton" parent="ColorRect/TextureRect/Weight"]
+material = SubResource("ShaderMaterial_1p5dp")
+layout_mode = 0
+offset_left = 255.0
+offset_top = -6.00004
+offset_right = 346.0
+offset_bottom = 61.0
+texture_normal = ExtResource("4_73o61")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/Weight/WeightScaleButton"]
+material = SubResource("ShaderMaterial_qqd5v")
+layout_mode = 0
+offset_left = 21.0
+offset_top = 16.0
+offset_right = 67.0
+offset_bottom = 50.0
+mouse_filter = 2
+texture = ExtResource("2_8t374")
+expand_mode = 1
+
+[node name="Text" type="RichTextLabel" parent="ColorRect/TextureRect/Weight/WeightScaleButton"]
+offset_left = 91.0
+offset_top = 15.0
+offset_right = 183.0
+offset_bottom = 59.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "10000"
+
+[node name="WeightMoneyButton" type="TextureButton" parent="ColorRect/TextureRect/Weight"]
+material = SubResource("ShaderMaterial_1p5dp")
+layout_mode = 0
+offset_left = 437.0
+offset_top = -3.00008
+offset_right = 528.0
+offset_bottom = 63.9999
+texture_normal = ExtResource("4_73o61")
+stretch_mode = 0
+flip_h = true
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/Weight/WeightMoneyButton"]
+material = SubResource("ShaderMaterial_qqd5v")
+offset_left = 31.0
+offset_top = 10.0
+offset_right = 63.0
+offset_bottom = 52.0
+mouse_filter = 2
+texture = ExtResource("5_osj2u")
+expand_mode = 1
+
+[node name="Text" type="RichTextLabel" parent="ColorRect/TextureRect/Weight/WeightMoneyButton"]
+offset_left = 91.0
+offset_top = 15.0
+offset_right = 183.0
+offset_bottom = 59.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "10000"
+
+[node name="ScalePerFish" type="TextureRect" parent="ColorRect/TextureRect"]
+material = SubResource("ShaderMaterial_j05xt")
+offset_left = 135.0
+offset_top = 174.0
+offset_right = 226.0
+offset_bottom = 228.0
+rotation = 6.28319
+texture = ExtResource("6_7l5bm")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/ScalePerFish"]
+material = SubResource("ShaderMaterial_lnha2")
+layout_mode = 0
+offset_left = 36.0
+offset_top = 13.0
+offset_right = 70.0
+offset_bottom = 38.0
+mouse_filter = 2
+texture = ExtResource("2_8t374")
+expand_mode = 1
+
+[node name="Text" type="RichTextLabel" parent="ColorRect/TextureRect/ScalePerFish"]
+offset_left = 96.0
+offset_top = -10.0
+offset_right = 245.0
+offset_bottom = 70.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "1"
+
+[node name="ScaleFishScaleButton" type="TextureButton" parent="ColorRect/TextureRect/ScalePerFish"]
+material = SubResource("ShaderMaterial_1p5dp")
+offset_left = 255.0
+offset_top = -6.00004
+offset_right = 346.0
+offset_bottom = 61.0
+texture_normal = ExtResource("4_73o61")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/ScalePerFish/ScaleFishScaleButton"]
+material = SubResource("ShaderMaterial_qqd5v")
+layout_mode = 0
+offset_left = 21.0
+offset_top = 16.0
+offset_right = 67.0
+offset_bottom = 50.0
+mouse_filter = 2
+texture = ExtResource("2_8t374")
+expand_mode = 1
+
+[node name="Text" type="RichTextLabel" parent="ColorRect/TextureRect/ScalePerFish/ScaleFishScaleButton"]
+offset_left = 91.0
+offset_top = 15.0
+offset_right = 183.0
+offset_bottom = 59.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "10000"
+
+[node name="ScaleFishMoneyButton" type="TextureButton" parent="ColorRect/TextureRect/ScalePerFish"]
+material = SubResource("ShaderMaterial_1p5dp")
+offset_left = 437.0
+offset_top = -3.00008
+offset_right = 528.0
+offset_bottom = 63.9999
+texture_normal = ExtResource("4_73o61")
+stretch_mode = 0
+flip_h = true
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/ScalePerFish/ScaleFishMoneyButton"]
+material = SubResource("ShaderMaterial_qqd5v")
+offset_left = 31.0
+offset_top = 10.0
+offset_right = 63.0
+offset_bottom = 52.0
+mouse_filter = 2
+texture = ExtResource("5_osj2u")
+expand_mode = 1
+
+[node name="Text" type="RichTextLabel" parent="ColorRect/TextureRect/ScalePerFish/ScaleFishMoneyButton"]
+offset_left = 91.0
+offset_top = 15.0
+offset_right = 183.0
+offset_bottom = 59.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "10000"
+
+[node name="MoneyPerFish" type="TextureRect" parent="ColorRect/TextureRect"]
+material = SubResource("ShaderMaterial_j05xt")
+offset_left = 135.0
+offset_top = 245.0
+offset_right = 226.0
+offset_bottom = 299.0
+rotation = 6.28319
+texture = ExtResource("6_7l5bm")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/MoneyPerFish"]
+material = SubResource("ShaderMaterial_lnha2")
+layout_mode = 0
+offset_left = 30.0
+offset_top = 5.99999
+offset_right = 70.0
+offset_bottom = 46.0
+mouse_filter = 2
+texture = ExtResource("5_osj2u")
+
+[node name="Text" type="RichTextLabel" parent="ColorRect/TextureRect/MoneyPerFish"]
+offset_left = 99.0
+offset_top = -10.0
+offset_right = 247.0
+offset_bottom = 70.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "3"
+
+[node name="MoneyFishScaleButton" type="TextureButton" parent="ColorRect/TextureRect/MoneyPerFish"]
+material = SubResource("ShaderMaterial_1p5dp")
+offset_left = 255.0
+offset_top = -6.00004
+offset_right = 346.0
+offset_bottom = 61.0
+texture_normal = ExtResource("4_73o61")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/MoneyPerFish/MoneyFishScaleButton"]
+material = SubResource("ShaderMaterial_qqd5v")
+layout_mode = 0
+offset_left = 21.0
+offset_top = 16.0
+offset_right = 67.0
+offset_bottom = 50.0
+mouse_filter = 2
+texture = ExtResource("2_8t374")
+expand_mode = 1
+
+[node name="Text" type="RichTextLabel" parent="ColorRect/TextureRect/MoneyPerFish/MoneyFishScaleButton"]
+offset_left = 91.0
+offset_top = 15.0
+offset_right = 183.0
+offset_bottom = 59.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "10000"
+
+[node name="MoneyFishMoneyButton" type="TextureButton" parent="ColorRect/TextureRect/MoneyPerFish"]
+material = SubResource("ShaderMaterial_1p5dp")
+offset_left = 437.0
+offset_top = -3.00008
+offset_right = 528.0
+offset_bottom = 63.9999
+texture_normal = ExtResource("4_73o61")
+stretch_mode = 0
+flip_h = true
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/MoneyPerFish/MoneyFishMoneyButton"]
+material = SubResource("ShaderMaterial_qqd5v")
+offset_left = 31.0
+offset_top = 10.0
+offset_right = 63.0
+offset_bottom = 52.0
+mouse_filter = 2
+texture = ExtResource("5_osj2u")
+expand_mode = 1
+
+[node name="Text" type="RichTextLabel" parent="ColorRect/TextureRect/MoneyPerFish/MoneyFishMoneyButton"]
+offset_left = 91.0
+offset_top = 15.0
+offset_right = 183.0
+offset_bottom = 59.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "10000"
+
+[node name="MaxStoredFish" type="TextureRect" parent="ColorRect/TextureRect"]
+visible = false
+material = SubResource("ShaderMaterial_j05xt")
+offset_left = 135.0
+offset_top = 315.0
+offset_right = 226.0
+offset_bottom = 369.0
+rotation = 6.28319
+texture = ExtResource("7_a64yj")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/MaxStoredFish"]
+material = SubResource("ShaderMaterial_lnha2")
+layout_mode = 0
+offset_left = 30.0
+offset_top = 13.0
+offset_right = 70.0
+offset_bottom = 38.0
+mouse_filter = 2
+texture = ExtResource("6_7l5bm")
+expand_mode = 1
+
+[node name="Text" type="RichTextLabel" parent="ColorRect/TextureRect/MaxStoredFish"]
+offset_left = 96.0
+offset_top = -10.0
+offset_right = 246.0
+offset_bottom = 70.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "10"
+
+[node name="MaxFishMoneyButton" type="TextureButton" parent="ColorRect/TextureRect/MaxStoredFish"]
+material = SubResource("ShaderMaterial_1p5dp")
+offset_left = 255.0
+offset_top = -6.00004
+offset_right = 346.0
+offset_bottom = 61.0
+texture_normal = ExtResource("4_73o61")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="ColorRect/TextureRect/MaxStoredFish/MaxFishMoneyButton"]
+offset_left = 91.0
+offset_top = 15.0
+offset_right = 183.0
+offset_bottom = 59.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "10000"
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/MaxStoredFish/MaxFishMoneyButton"]
+material = SubResource("ShaderMaterial_qqd5v")
+offset_left = 31.0
+offset_top = 10.0
+offset_right = 63.0
+offset_bottom = 52.0
+mouse_filter = 2
+texture = ExtResource("5_osj2u")
+expand_mode = 1
+
+[node name="MaxFishGemButton" type="TextureButton" parent="ColorRect/TextureRect/MaxStoredFish"]
+material = SubResource("ShaderMaterial_1p5dp")
+offset_left = 437.0
+offset_top = -3.00008
+offset_right = 528.0
+offset_bottom = 63.9999
+texture_normal = ExtResource("4_73o61")
+stretch_mode = 0
+flip_h = true
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/MaxStoredFish/MaxFishGemButton"]
+material = SubResource("ShaderMaterial_qqd5v")
+offset_left = 25.0
+offset_top = 13.0
+offset_right = 70.0
+offset_bottom = 55.0
+mouse_filter = 2
+texture = ExtResource("8_lti00")
+
+[node name="Text" type="RichTextLabel" parent="ColorRect/TextureRect/MaxStoredFish/MaxFishGemButton"]
+offset_left = 91.0
+offset_top = 15.0
+offset_right = 183.0
+offset_bottom = 59.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "10000"
+
+[node name="FishTime" type="TextureRect" parent="ColorRect/TextureRect"]
+visible = false
+material = SubResource("ShaderMaterial_j05xt")
+offset_left = 135.0
+offset_top = 386.0
+offset_right = 226.0
+offset_bottom = 440.0
+rotation = 6.28319
+texture = ExtResource("7_a64yj")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/FishTime"]
+material = SubResource("ShaderMaterial_lnha2")
+layout_mode = 0
+offset_left = 26.0
+offset_top = 7.0
+offset_right = 67.0
+offset_bottom = 47.0
+mouse_filter = 2
+texture = ExtResource("8_wiufn")
+expand_mode = 1
+
+[node name="Text" type="RichTextLabel" parent="ColorRect/TextureRect/FishTime"]
+offset_left = 100.0
+offset_top = -10.0
+offset_right = 255.0
+offset_bottom = 70.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "600"
+
+[node name="FishTimeMoneyButton" type="TextureButton" parent="ColorRect/TextureRect/FishTime"]
+material = SubResource("ShaderMaterial_1p5dp")
+offset_left = 255.0
+offset_top = -6.00004
+offset_right = 346.0
+offset_bottom = 61.0
+texture_normal = ExtResource("4_73o61")
+stretch_mode = 0
+
+[node name="Text" type="RichTextLabel" parent="ColorRect/TextureRect/FishTime/FishTimeMoneyButton"]
+offset_left = 91.0
+offset_top = 15.0
+offset_right = 183.0
+offset_bottom = 59.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "10000"
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/FishTime/FishTimeMoneyButton"]
+material = SubResource("ShaderMaterial_qqd5v")
+offset_left = 31.0
+offset_top = 10.0
+offset_right = 63.0
+offset_bottom = 52.0
+mouse_filter = 2
+texture = ExtResource("5_osj2u")
+expand_mode = 1
+
+[node name="FishTimeGemButton" type="TextureButton" parent="ColorRect/TextureRect/FishTime"]
+material = SubResource("ShaderMaterial_1p5dp")
+offset_left = 437.0
+offset_top = -3.00008
+offset_right = 528.0
+offset_bottom = 63.9999
+texture_normal = ExtResource("4_73o61")
+stretch_mode = 0
+flip_h = true
+
+[node name="Text" type="RichTextLabel" parent="ColorRect/TextureRect/FishTime/FishTimeGemButton"]
+offset_left = 91.0
+offset_top = 15.0
+offset_right = 183.0
+offset_bottom = 59.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "10000"
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect/FishTime/FishTimeGemButton"]
+material = SubResource("ShaderMaterial_qqd5v")
+offset_left = 25.0
+offset_top = 13.0
+offset_right = 70.0
+offset_bottom = 55.0
+mouse_filter = 2
+texture = ExtResource("8_lti00")
+
+[node name="BackButton" type="TextureButton" parent="ColorRect/TextureRect"]
+material = SubResource("ShaderMaterial_la2bw")
+layout_mode = 0
+offset_left = 262.0
+offset_top = 453.0
+offset_right = 403.0
+offset_bottom = 528.0
+texture_normal = ExtResource("11_xftrp")
+stretch_mode = 0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_nd1d7")
+
+[connection signal="button_up" from="ColorRect/TextureRect/Weight/WeightScaleButton" to="." method="_on_weight_scale_button_button_up"]
+[connection signal="button_up" from="ColorRect/TextureRect/Weight/WeightMoneyButton" to="." method="_on_weight_money_button_button_up"]
+[connection signal="button_up" from="ColorRect/TextureRect/ScalePerFish/ScaleFishScaleButton" to="." method="_on_scale_fish_scale_button_button_up"]
+[connection signal="button_up" from="ColorRect/TextureRect/ScalePerFish/ScaleFishMoneyButton" to="." method="_on_scale_fish_money_button_button_up"]
+[connection signal="button_up" from="ColorRect/TextureRect/MoneyPerFish/MoneyFishScaleButton" to="." method="_on_money_fish_scale_button_button_up"]
+[connection signal="button_up" from="ColorRect/TextureRect/MoneyPerFish/MoneyFishMoneyButton" to="." method="_on_money_fish_money_button_button_up"]
+[connection signal="button_up" from="ColorRect/TextureRect/MaxStoredFish/MaxFishMoneyButton" to="." method="_on_max_fish_money_button_button_up"]
+[connection signal="button_up" from="ColorRect/TextureRect/MaxStoredFish/MaxFishGemButton" to="." method="_on_max_fish_gem_button_button_up"]
+[connection signal="button_up" from="ColorRect/TextureRect/FishTime/FishTimeMoneyButton" to="." method="_on_fish_time_money_button_button_up"]
+[connection signal="button_up" from="ColorRect/TextureRect/FishTime/FishTimeGemButton" to="." method="_on_fish_time_gem_button_button_up"]
+[connection signal="button_up" from="ColorRect/TextureRect/BackButton" to="." method="_on_back_button_button_up"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]

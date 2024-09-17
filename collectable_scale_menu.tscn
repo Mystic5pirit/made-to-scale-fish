@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://gxpa3w6detik"]
+
+[ext_resource type="Script" path="res://collectable_scale_menu.gd" id="1_dvlqk"]
+[ext_resource type="Shader" path="res://outline.gdshader" id="2_had12"]
+[ext_resource type="Texture2D" uid="uid://cr8iog8j4qwhx" path="res://Scale.png" id="3_1rggv"]
+[ext_resource type="Texture2D" uid="uid://jjdqjmdmetgg" path="res://Arrow.png" id="3_jfd03"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oe8mb"]
+shader = ExtResource("2_had12")
+shader_parameter/outline_color = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5t8hn"]
+shader = ExtResource("2_had12")
+shader_parameter/outline_color = null
+
+[node name="CollectableScaleMenu" type="Control" groups=["CollectableScalesMenu"]]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dvlqk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 1167.0
+offset_bottom = 669.0
+color = Color(0, 0, 0, 0.501961)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+material = SubResource("ShaderMaterial_oe8mb")
+layout_mode = 0
+offset_left = 147.0
+offset_top = 49.0
+offset_right = 1003.0
+offset_bottom = 593.0
+texture = ExtResource("3_1rggv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/TextureRect"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 210.0
+offset_right = 796.0
+offset_bottom = 384.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center] COLLECTABLE SCALES NOT IMPLIMENTED"
+
+[node name="BackButton" type="TextureButton" parent="ColorRect/TextureRect"]
+material = SubResource("ShaderMaterial_5t8hn")
+offset_left = 262.0
+offset_top = 453.0
+offset_right = 403.0
+offset_bottom = 528.0
+texture_normal = ExtResource("3_jfd03")
+stretch_mode = 0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="button_up" from="ColorRect/TextureRect/BackButton" to="." method="_on_back_button_button_up"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
