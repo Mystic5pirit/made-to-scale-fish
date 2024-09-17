@@ -7,6 +7,8 @@
 
  In the case that I continue to work on this game, I plan on adding rare scales that have various effects.
 
+ The biggest things I learned from this experience are the importance of file management (why did I not use folders?) and the importance of consistent variable names.
+
  Itch.io link:
  https://mysticspirit.itch.io/built-to-scale-fish
 
