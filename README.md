@@ -1,7 +1,7 @@
 # made-to-scale-fish
  A game made for GMTK 2024 Game Jam
 
- All Rights Reserved.
+ All Rights Reserved Except for Audio. Audio Attributed Below.
 
  This game is an incremental game where the player scales fish. The player collects scales and money to spend on upgrades. Over time the scales take more pressed to collect, this is ofset by upgrades.
 
